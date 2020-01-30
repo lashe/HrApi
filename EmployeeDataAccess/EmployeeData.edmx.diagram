@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a6ebf862a6424c1dbd56036a37d6e6d6" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="lapo_hrModel.branch" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.city" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.country" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.function" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.identification" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.login" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.org_unit" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.org_unit_ref" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.processref" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.relationship" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.roles_ref" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.state" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.status" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.testing" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.user_role" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="lapo_hrModel.employee" Width="1.5" PointX="0.75" PointY="11.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

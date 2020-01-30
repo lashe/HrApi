@@ -1,0 +1,729 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="lapo_hrModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="branch">
+          <Key>
+            <PropertyRef Name="branchname" />
+          </Key>
+          <Property Name="branchid" Type="int" Nullable="false" />
+          <Property Name="branchname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="statusid" Type="varchar" MaxLength="50" />
+          <Property Name="org_id" Type="varchar" MaxLength="50" />
+          <Property Name="org_ct_id" Type="varchar" MaxLength="50" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createddt" Type="date" />
+          <Property Name="editedby" Type="varchar" MaxLength="50" />
+          <Property Name="editeddt" Type="date" />
+        </EntityType>
+        <EntityType Name="city">
+          <Key>
+            <PropertyRef Name="cityname" />
+          </Key>
+          <Property Name="cityid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cityname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createddt" Type="date" />
+          <Property Name="editedby" Type="varchar" MaxLength="50" />
+          <Property Name="editeddt" Type="varchar" MaxLength="50" />
+          <Property Name="stateid" Type="int" />
+        </EntityType>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="countryname" />
+          </Key>
+          <Property Name="countryid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="countryname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createddt" Type="date" />
+          <Property Name="editedby" Type="varchar" MaxLength="50" />
+          <Property Name="editeddt" Type="date" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="staffID" />
+          </Key>
+          <Property Name="employeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="staffID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstname" Type="varchar" MaxLength="50" />
+          <Property Name="middlename" Type="varchar" MaxLength="50" />
+          <Property Name="surname" Type="varchar" MaxLength="50" />
+          <Property Name="birthdate" Type="date" />
+          <Property Name="maritalstatus" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="hiredate" Type="date" />
+          <Property Name="phonenumber" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="stateID" Type="int" />
+          <Property Name="cityID" Type="int" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="idTypeID" Type="varchar" MaxLength="50" />
+          <Property Name="idNumber" Type="varchar" MaxLength="50" />
+          <Property Name="kinName" Type="varchar" MaxLength="50" />
+          <Property Name="kinPhone" Type="varchar" MaxLength="50" />
+          <Property Name="kinAddress" Type="varchar" MaxLength="50" />
+          <Property Name="kinRelationshipId" Type="varchar" MaxLength="50" />
+          <Property Name="employeeFunctionid" Type="varchar" MaxLength="50" />
+          <Property Name="branchID" Type="int" />
+          <Property Name="manager1ID" Type="varchar" MaxLength="50" />
+          <Property Name="manager2ID" Type="varchar" MaxLength="50" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createddt" Type="date" />
+          <Property Name="countryid" Type="int" />
+        </EntityType>
+        <EntityType Name="function">
+          <Key>
+            <PropertyRef Name="fcn_desc" />
+          </Key>
+          <Property Name="fcnid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fcn_desc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createddt" Type="date" />
+          <Property Name="editedby" Type="varchar" MaxLength="50" />
+          <Property Name="editeddt" Type="date" />
+        </EntityType>
+        <EntityType Name="identification">
+          <Key>
+            <PropertyRef Name="idtype" />
+          </Key>
+          <Property Name="id" Type="int" />
+          <Property Name="idtype" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createddt" Type="date" />
+          <Property Name="editedby" Type="varchar" MaxLength="50" />
+          <Property Name="editeddt" Type="date" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="sn" />
+          </Key>
+          <Property Name="sn" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="role" Type="varchar" MaxLength="50" />
+          <Property Name="staffid" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="org_unit">
+          <Key>
+            <PropertyRef Name="org_id" />
+          </Key>
+          <Property Name="org_id" Type="int" Nullable="false" />
+          <Property Name="org_name" Type="varchar" MaxLength="50" />
+          <Property Name="parent_id" Type="int" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="created_dt" Type="date" />
+          <Property Name="edited_by" Type="varchar" MaxLength="50" />
+          <Property Name="edited_dt" Type="date" />
+          <Property Name="status_id" Type="varchar" MaxLength="50" />
+          <Property Name="org_ref_id" Type="int" />
+        </EntityType>
+        <EntityType Name="org_unit_ref">
+          <Key>
+            <PropertyRef Name="org_ref_id" />
+          </Key>
+          <Property Name="org_ref_id" Type="int" Nullable="false" />
+          <Property Name="org_cat" Type="varchar" MaxLength="50" />
+          <Property Name="org_desc" Type="varchar" MaxLength="50" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="created_dt" Type="date" />
+          <Property Name="edited_by" Type="varchar" MaxLength="50" />
+          <Property Name="edited_dt" Type="date" />
+          <Property Name="status_id" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="processref">
+          <Key>
+            <PropertyRef Name="prcdesc" />
+          </Key>
+          <Property Name="prcID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="prcdesc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prccat" Type="varchar" MaxLength="50" />
+          <Property Name="proclvl" Type="varchar" MaxLength="50" />
+          <Property Name="statusID" Type="varchar" MaxLength="50" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createddt" Type="date" />
+          <Property Name="editedby" Type="varchar" MaxLength="50" />
+          <Property Name="editeddt" Type="date" />
+        </EntityType>
+        <EntityType Name="relationship">
+          <Key>
+            <PropertyRef Name="rel_desc" />
+          </Key>
+          <Property Name="relid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rel_desc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createddt" Type="date" />
+          <Property Name="editedby" Type="varchar" MaxLength="50" />
+          <Property Name="editeddt" Type="date" />
+        </EntityType>
+        <EntityType Name="roles_ref">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="sn" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="role_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="role_desc" Type="varchar" MaxLength="50" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="created_date" Type="date" />
+          <Property Name="edited_by" Type="varchar" MaxLength="50" />
+          <Property Name="edited_date" Type="date" />
+          <Property Name="status_id" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="statename" />
+          </Key>
+          <Property Name="stateid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="statename" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="countryid" Type="int" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="editedby" Type="varchar" MaxLength="50" />
+          <Property Name="createddt" Type="date" />
+          <Property Name="editeddt" Type="date" />
+        </EntityType>
+        <EntityType Name="status">
+          <Key>
+            <PropertyRef Name="statusdesc" />
+          </Key>
+          <Property Name="statusid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="statusdesc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createddt" Type="date" />
+          <Property Name="editedby" Type="varchar" MaxLength="50" />
+          <Property Name="editeddt" Type="date" />
+        </EntityType>
+        <EntityType Name="testing">
+          <Key>
+            <PropertyRef Name="staffid" />
+          </Key>
+          <Property Name="staffid" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="text" Type="varchar" MaxLength="50" />
+          <Property Name="number" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="user_role">
+          <Key>
+            <PropertyRef Name="user_role_id" />
+          </Key>
+          <Property Name="user_role_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_id" Type="varchar" MaxLength="50" />
+          <Property Name="role_id" Type="varchar" MaxLength="50" />
+          <Property Name="status_id" Type="varchar" MaxLength="50" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="created_dt" Type="date" />
+          <Property Name="edited_by" Type="varchar" MaxLength="50" />
+          <Property Name="edited_dt" Type="date" />
+          <Property Name="text" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="lapo_hrModelStoreContainer">
+          <EntitySet Name="branch" EntityType="Self.branch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="city" EntityType="Self.city" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="country" EntityType="Self.country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="function" EntityType="Self.function" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="identification" EntityType="Self.identification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="org_unit" EntityType="Self.org_unit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="org_unit_ref" EntityType="Self.org_unit_ref" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="processref" EntityType="Self.processref" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="relationship" EntityType="Self.relationship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="roles_ref" EntityType="Self.roles_ref" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="state" EntityType="Self.state" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="status" EntityType="Self.status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="testing" EntityType="Self.testing" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_role" EntityType="Self.user_role" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="lapo_hrModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="lapo_hrEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="branch" EntityType="lapo_hrModel.branch" />
+          <EntitySet Name="city" EntityType="lapo_hrModel.city" />
+          <EntitySet Name="country" EntityType="lapo_hrModel.country" />
+          <EntitySet Name="function" EntityType="lapo_hrModel.function" />
+          <EntitySet Name="identification" EntityType="lapo_hrModel.identification" />
+          <EntitySet Name="login" EntityType="lapo_hrModel.login" />
+          <EntitySet Name="org_unit" EntityType="lapo_hrModel.org_unit" />
+          <EntitySet Name="org_unit_ref" EntityType="lapo_hrModel.org_unit_ref" />
+          <EntitySet Name="processref" EntityType="lapo_hrModel.processref" />
+          <EntitySet Name="relationship" EntityType="lapo_hrModel.relationship" />
+          <EntitySet Name="roles_ref" EntityType="lapo_hrModel.roles_ref" />
+          <EntitySet Name="state" EntityType="lapo_hrModel.state" />
+          <EntitySet Name="status" EntityType="lapo_hrModel.status" />
+          <EntitySet Name="testing" EntityType="lapo_hrModel.testing" />
+          <EntitySet Name="user_role" EntityType="lapo_hrModel.user_role" />
+          <EntitySet Name="employee" EntityType="lapo_hrModel.employee" />
+        </EntityContainer>
+        <EntityType Name="branch">
+          <Key>
+            <PropertyRef Name="branchname" />
+          </Key>
+          <Property Name="branchid" Type="Int32" Nullable="false" />
+          <Property Name="branchname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="statusid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="org_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="org_ct_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createddt" Type="DateTime" Precision="0" />
+          <Property Name="editedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="editeddt" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="city">
+          <Key>
+            <PropertyRef Name="cityname" />
+          </Key>
+          <Property Name="cityid" Type="Int32" Nullable="false" />
+          <Property Name="cityname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createddt" Type="DateTime" Precision="0" />
+          <Property Name="editedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="editeddt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="stateid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="countryname" />
+          </Key>
+          <Property Name="countryid" Type="Int32" Nullable="false" />
+          <Property Name="countryname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createddt" Type="DateTime" Precision="0" />
+          <Property Name="editedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="editeddt" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="function">
+          <Key>
+            <PropertyRef Name="fcn_desc" />
+          </Key>
+          <Property Name="fcnid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fcn_desc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createddt" Type="DateTime" Precision="0" />
+          <Property Name="editedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="editeddt" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="identification">
+          <Key>
+            <PropertyRef Name="idtype" />
+          </Key>
+          <Property Name="id" Type="Int32" />
+          <Property Name="idtype" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createddt" Type="DateTime" Precision="0" />
+          <Property Name="editedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="editeddt" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="sn" />
+          </Key>
+          <Property Name="sn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="staffid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="org_unit">
+          <Key>
+            <PropertyRef Name="org_id" />
+          </Key>
+          <Property Name="org_id" Type="Int32" Nullable="false" />
+          <Property Name="org_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="parent_id" Type="Int32" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_dt" Type="DateTime" Precision="0" />
+          <Property Name="edited_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="edited_dt" Type="DateTime" Precision="0" />
+          <Property Name="status_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="org_ref_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="org_unit_ref">
+          <Key>
+            <PropertyRef Name="org_ref_id" />
+          </Key>
+          <Property Name="org_ref_id" Type="Int32" Nullable="false" />
+          <Property Name="org_cat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="org_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_dt" Type="DateTime" Precision="0" />
+          <Property Name="edited_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="edited_dt" Type="DateTime" Precision="0" />
+          <Property Name="status_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="processref">
+          <Key>
+            <PropertyRef Name="prcdesc" />
+          </Key>
+          <Property Name="prcID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prcdesc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prccat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="proclvl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="statusID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createddt" Type="DateTime" Precision="0" />
+          <Property Name="editedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="editeddt" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="relationship">
+          <Key>
+            <PropertyRef Name="rel_desc" />
+          </Key>
+          <Property Name="relid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rel_desc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createddt" Type="DateTime" Precision="0" />
+          <Property Name="editedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="editeddt" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="roles_ref">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="sn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="role_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="role_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_date" Type="DateTime" Precision="0" />
+          <Property Name="edited_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="edited_date" Type="DateTime" Precision="0" />
+          <Property Name="status_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="statename" />
+          </Key>
+          <Property Name="stateid" Type="Int32" Nullable="false" />
+          <Property Name="statename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="countryid" Type="Int32" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="editedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createddt" Type="DateTime" Precision="0" />
+          <Property Name="editeddt" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="status">
+          <Key>
+            <PropertyRef Name="statusdesc" />
+          </Key>
+          <Property Name="statusid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="statusdesc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createddt" Type="DateTime" Precision="0" />
+          <Property Name="editedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="editeddt" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="testing">
+          <Key>
+            <PropertyRef Name="staffid" />
+          </Key>
+          <Property Name="staffid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="text" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="number" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="user_role">
+          <Key>
+            <PropertyRef Name="user_role_id" />
+          </Key>
+          <Property Name="user_role_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="role_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_dt" Type="DateTime" Precision="0" />
+          <Property Name="edited_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="edited_dt" Type="DateTime" Precision="0" />
+          <Property Name="text" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="staffID" />
+          </Key>
+          <Property Name="employeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="staffID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="birthdate" Type="DateTime" Precision="0" />
+          <Property Name="maritalstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hiredate" Type="DateTime" Precision="0" />
+          <Property Name="phonenumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="stateID" Type="Int32" />
+          <Property Name="cityID" Type="Int32" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idTypeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kinName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kinPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kinAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kinRelationshipId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="employeeFunctionid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="branchID" Type="Int32" />
+          <Property Name="manager1ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="manager2ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createddt" Type="DateTime" Precision="0" />
+          <Property Name="countryid" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="lapo_hrModelStoreContainer" CdmEntityContainer="lapo_hrEntities">
+          <EntitySetMapping Name="branch">
+            <EntityTypeMapping TypeName="lapo_hrModel.branch">
+              <MappingFragment StoreEntitySet="branch">
+                <ScalarProperty Name="editeddt" ColumnName="editeddt" />
+                <ScalarProperty Name="editedby" ColumnName="editedby" />
+                <ScalarProperty Name="createddt" ColumnName="createddt" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="org_ct_id" ColumnName="org_ct_id" />
+                <ScalarProperty Name="org_id" ColumnName="org_id" />
+                <ScalarProperty Name="statusid" ColumnName="statusid" />
+                <ScalarProperty Name="branchname" ColumnName="branchname" />
+                <ScalarProperty Name="branchid" ColumnName="branchid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="city">
+            <EntityTypeMapping TypeName="lapo_hrModel.city">
+              <MappingFragment StoreEntitySet="city">
+                <ScalarProperty Name="stateid" ColumnName="stateid" />
+                <ScalarProperty Name="editeddt" ColumnName="editeddt" />
+                <ScalarProperty Name="editedby" ColumnName="editedby" />
+                <ScalarProperty Name="createddt" ColumnName="createddt" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="cityname" ColumnName="cityname" />
+                <ScalarProperty Name="cityid" ColumnName="cityid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="country">
+            <EntityTypeMapping TypeName="lapo_hrModel.country">
+              <MappingFragment StoreEntitySet="country">
+                <ScalarProperty Name="editeddt" ColumnName="editeddt" />
+                <ScalarProperty Name="editedby" ColumnName="editedby" />
+                <ScalarProperty Name="createddt" ColumnName="createddt" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="countryname" ColumnName="countryname" />
+                <ScalarProperty Name="countryid" ColumnName="countryid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="function">
+            <EntityTypeMapping TypeName="lapo_hrModel.function">
+              <MappingFragment StoreEntitySet="function">
+                <ScalarProperty Name="editeddt" ColumnName="editeddt" />
+                <ScalarProperty Name="editedby" ColumnName="editedby" />
+                <ScalarProperty Name="createddt" ColumnName="createddt" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="fcn_desc" ColumnName="fcn_desc" />
+                <ScalarProperty Name="fcnid" ColumnName="fcnid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="identification">
+            <EntityTypeMapping TypeName="lapo_hrModel.identification">
+              <MappingFragment StoreEntitySet="identification">
+                <ScalarProperty Name="editeddt" ColumnName="editeddt" />
+                <ScalarProperty Name="editedby" ColumnName="editedby" />
+                <ScalarProperty Name="createddt" ColumnName="createddt" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="idtype" ColumnName="idtype" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login">
+            <EntityTypeMapping TypeName="lapo_hrModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="staffid" ColumnName="staffid" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="sn" ColumnName="sn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="org_unit">
+            <EntityTypeMapping TypeName="lapo_hrModel.org_unit">
+              <MappingFragment StoreEntitySet="org_unit">
+                <ScalarProperty Name="org_ref_id" ColumnName="org_ref_id" />
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="edited_dt" ColumnName="edited_dt" />
+                <ScalarProperty Name="edited_by" ColumnName="edited_by" />
+                <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="org_name" ColumnName="org_name" />
+                <ScalarProperty Name="org_id" ColumnName="org_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="org_unit_ref">
+            <EntityTypeMapping TypeName="lapo_hrModel.org_unit_ref">
+              <MappingFragment StoreEntitySet="org_unit_ref">
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="edited_dt" ColumnName="edited_dt" />
+                <ScalarProperty Name="edited_by" ColumnName="edited_by" />
+                <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="org_desc" ColumnName="org_desc" />
+                <ScalarProperty Name="org_cat" ColumnName="org_cat" />
+                <ScalarProperty Name="org_ref_id" ColumnName="org_ref_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="processref">
+            <EntityTypeMapping TypeName="lapo_hrModel.processref">
+              <MappingFragment StoreEntitySet="processref">
+                <ScalarProperty Name="editeddt" ColumnName="editeddt" />
+                <ScalarProperty Name="editedby" ColumnName="editedby" />
+                <ScalarProperty Name="createddt" ColumnName="createddt" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="statusID" ColumnName="statusID" />
+                <ScalarProperty Name="proclvl" ColumnName="proclvl" />
+                <ScalarProperty Name="prccat" ColumnName="prccat" />
+                <ScalarProperty Name="prcdesc" ColumnName="prcdesc" />
+                <ScalarProperty Name="prcID" ColumnName="prcID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="relationship">
+            <EntityTypeMapping TypeName="lapo_hrModel.relationship">
+              <MappingFragment StoreEntitySet="relationship">
+                <ScalarProperty Name="editeddt" ColumnName="editeddt" />
+                <ScalarProperty Name="editedby" ColumnName="editedby" />
+                <ScalarProperty Name="createddt" ColumnName="createddt" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="rel_desc" ColumnName="rel_desc" />
+                <ScalarProperty Name="relid" ColumnName="relid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roles_ref">
+            <EntityTypeMapping TypeName="lapo_hrModel.roles_ref">
+              <MappingFragment StoreEntitySet="roles_ref">
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="edited_date" ColumnName="edited_date" />
+                <ScalarProperty Name="edited_by" ColumnName="edited_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="role_desc" ColumnName="role_desc" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="sn" ColumnName="sn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="state">
+            <EntityTypeMapping TypeName="lapo_hrModel.state">
+              <MappingFragment StoreEntitySet="state">
+                <ScalarProperty Name="editeddt" ColumnName="editeddt" />
+                <ScalarProperty Name="createddt" ColumnName="createddt" />
+                <ScalarProperty Name="editedby" ColumnName="editedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="countryid" ColumnName="countryid" />
+                <ScalarProperty Name="statename" ColumnName="statename" />
+                <ScalarProperty Name="stateid" ColumnName="stateid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="status">
+            <EntityTypeMapping TypeName="lapo_hrModel.status">
+              <MappingFragment StoreEntitySet="status">
+                <ScalarProperty Name="editeddt" ColumnName="editeddt" />
+                <ScalarProperty Name="editedby" ColumnName="editedby" />
+                <ScalarProperty Name="createddt" ColumnName="createddt" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="statusdesc" ColumnName="statusdesc" />
+                <ScalarProperty Name="statusid" ColumnName="statusid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="testing">
+            <EntityTypeMapping TypeName="lapo_hrModel.testing">
+              <MappingFragment StoreEntitySet="testing">
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="staffid" ColumnName="staffid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_role">
+            <EntityTypeMapping TypeName="lapo_hrModel.user_role">
+              <MappingFragment StoreEntitySet="user_role">
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="edited_dt" ColumnName="edited_dt" />
+                <ScalarProperty Name="edited_by" ColumnName="edited_by" />
+                <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="user_role_id" ColumnName="user_role_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employee">
+            <EntityTypeMapping TypeName="lapo_hrModel.employee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="countryid" ColumnName="countryid" />
+                <ScalarProperty Name="createddt" ColumnName="createddt" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="manager2ID" ColumnName="manager2ID" />
+                <ScalarProperty Name="manager1ID" ColumnName="manager1ID" />
+                <ScalarProperty Name="branchID" ColumnName="branchID" />
+                <ScalarProperty Name="employeeFunctionid" ColumnName="employeeFunctionid" />
+                <ScalarProperty Name="kinRelationshipId" ColumnName="kinRelationshipId" />
+                <ScalarProperty Name="kinAddress" ColumnName="kinAddress" />
+                <ScalarProperty Name="kinPhone" ColumnName="kinPhone" />
+                <ScalarProperty Name="kinName" ColumnName="kinName" />
+                <ScalarProperty Name="idNumber" ColumnName="idNumber" />
+                <ScalarProperty Name="idTypeID" ColumnName="idTypeID" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="cityID" ColumnName="cityID" />
+                <ScalarProperty Name="stateID" ColumnName="stateID" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+                <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="maritalstatus" ColumnName="maritalstatus" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="middlename" ColumnName="middlename" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="staffID" ColumnName="staffID" />
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
